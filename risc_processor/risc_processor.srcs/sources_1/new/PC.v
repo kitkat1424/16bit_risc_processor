@@ -19,7 +19,12 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module PC(input clk, reset, input [15:0] pc_in, output reg [15:0] pc_out);
+`timescale 1ns / 1ps
+
+module ProgramCounter(input clk, reset, 
+          input [15:0] pc_in, 
+          output reg [15:0] pc_out
+ );
     always @(posedge clk or posedge reset)
     begin
         if(reset)
@@ -28,5 +33,8 @@ module PC(input clk, reset, input [15:0] pc_in, output reg [15:0] pc_out);
             pc_out <= pc_in;
     end
 endmodule
+
+
+
 
 
