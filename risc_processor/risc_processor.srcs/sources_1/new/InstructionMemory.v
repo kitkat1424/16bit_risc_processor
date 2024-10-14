@@ -18,8 +18,6 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-`timescale 1ns / 1ps
-
 module InstructionMemory(
     input [15:0] addr, 
     output reg [15:0] instruction
