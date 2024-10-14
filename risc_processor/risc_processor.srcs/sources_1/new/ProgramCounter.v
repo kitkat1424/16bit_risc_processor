@@ -18,9 +18,6 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
-`timescale 1ns / 1ps
-
 module ProgramCounter(input clk, reset, 
           input [15:0] pc_in, 
           output reg [15:0] pc_out
