@@ -18,16 +18,19 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
+`timescale 1ns / 1ps
 
-module InstructionMemory(input [15:0] addr, output reg [15:0] instruction);
+module InstructionMemory(
+    input [15:0] addr, 
+    output reg [15:0] instruction
+);
     reg [15:0] memory[0:255];  // 256 memory locations
 
     initial begin
-        // Load instructions from an external file
-        $readmemb("program.txt", memory);
+        $readmemb("program.txt", memory); // Load instructions from an external file
     end
 
-    always @(addr)
+    always @(*)
     begin
         instruction = memory[addr];
     end
